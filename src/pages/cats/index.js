@@ -10,7 +10,7 @@ export async function getServerSideProps() {
 }
 
 export default function Cats({ cats }) {
-  console.log('cats: ', cats);
+
   return (
     <div className="bg-white">
     <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
