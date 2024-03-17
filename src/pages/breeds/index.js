@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import Layout from '@/components/Layout'
 import Select from '@/components/Select'
@@ -15,6 +16,7 @@ export default function Breeds({ breeds }) {
   const options = breeds.map(({ id, name }) => ({ id, name }));
   const [breed, setBreed] = useState('');
   const [breedImage, setBreedImage] = useState('');
+  const router = useRouter();
 
   useEffect(() => {
     async function getBreedImage() {
@@ -46,6 +48,7 @@ export default function Breeds({ breeds }) {
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             width={300}
             height={300}
+            onClick={router.push(`/breeds/${breed}`)}
           />
         )}
       </div>

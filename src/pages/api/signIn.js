@@ -14,7 +14,7 @@ export default function handler(req, res) {
     const cookie = serialize('user_id', userId, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      maxAge: 60 * 15, // One week
+      maxAge: 60 * 15,
       path: '/',
     })
     res.setHeader('Set-Cookie', cookie)
